@@ -69,5 +69,14 @@ public class Collection implements Serializable {
     public void setBooks(List<Book> books) {
         this.books = books;
     }
+    
+    //Constructors
+    public Collection() {}
+    public Collection(String name, String status) {
+    	this.name=name;
+    	this.status=status;
+    }
+    
+    
 }
 

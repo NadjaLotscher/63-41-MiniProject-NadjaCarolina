@@ -43,4 +43,10 @@ public class Category implements Serializable {
         this.books = books;
     }
     
+    //Constructors
+    public Category() {}
+    public Category(String name) {
+        this.name = name;
+    }
+    
 }

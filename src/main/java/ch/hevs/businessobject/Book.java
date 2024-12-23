@@ -72,5 +72,15 @@ public class Book implements Serializable {
 	     this.publisher = publisher;
 	   }
 	
+	//Constructors
+	 public Book() {}
+	 public Book(String title, String author, String isbn, double price, Publisher publisher, Category category) {
+	      this.title = title;
+	      this.author = author;
+	      this.isbn = isbn;
+	      this.price = price;
+	      this.publisher = publisher;
+	      this.category = category;
+	   }
 	
 }

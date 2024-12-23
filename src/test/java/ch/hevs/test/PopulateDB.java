@@ -1,11 +1,19 @@
 package ch.hevs.test;
 
 import java.sql.SQLException;
+import java.util.Arrays;
 
 import org.junit.Test;
 
 import ch.hevs.businessobject.Account;
 import ch.hevs.businessobject.Client;
+
+import ch.hevs.businessobject.Book;
+import ch.hevs.businessobject.User;
+import ch.hevs.businessobject.Publisher;
+import ch.hevs.businessobject.Category;
+import ch.hevs.businessobject.Collection;
+
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.EntityTransaction;
@@ -19,11 +27,13 @@ public class PopulateDB extends TestCase {
 		
 		EntityTransaction tx = null;
 		try {
-			
 			EntityManagerFactory emf = Persistence.createEntityManagerFactory("bankPU_unitTest");
 			EntityManager em = emf.createEntityManager();
 			tx = em.getTransaction();
 			tx.begin();
+			
+			/*
+			//Banque part :
 		
 			Client c1 = new Client("Zinedine", "Zidane");
 			Account a1 = new Account("1000", 10000, c1, "Compte Courant");
@@ -44,6 +54,29 @@ public class PopulateDB extends TestCase {
 			em.persist(a3);
 			em.persist(a4);
 			tx.commit();
+			*/
+			
+			// Create Categories
+            Category fiction = new Category ("Fiction");
+            em.persist(fiction);
+			
+            //Publishers
+            Publisher Scholastic = new Publisher("Scholastic");
+            em.persist(Scholastic);
+            
+            //Books
+            Book book1 = new Book("The Hunger Games", "Suzanne Collins", "978-1407132082", 11.47, Scholastic, fiction);
+            em.persist(book1);
+            
+            //Users
+            User user1 = new User("Alice", "Smith", "alice.smith@employeLibrary.com", "Library");
+            em.persist(user1);
+            
+            //Collections
+            
+            
+            // Commit the transaction
+            tx.commit();
 
 		} catch (Exception e) {
 			e.printStackTrace();

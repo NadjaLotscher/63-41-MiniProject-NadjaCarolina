@@ -82,5 +82,14 @@ public class User implements Serializable {
         this.collections = collections;
     }
     
+    //Constructors
+    public User() {}
+    public User(String lastname, String firstname,String email,String role) {
+    	this.lastname=lastname;
+    	this.firstname=firstname;
+    	this.email=email;
+    	this.role=role;
+    }
+    
 }
 

@@ -11,8 +11,7 @@ public class Publisher implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String lastname;
-	private String firstname;
+    private String name;
 
     @Embedded
     private Address address;
@@ -32,20 +31,11 @@ public class Publisher implements Serializable {
     }
 
     //Name
-    //Firstname
-   	public String getFirstname() {
-   		return firstname;
+   	public String getName() {
+   		return name;
    	}
-   	public void setFirstname(String firstname) {
-   		this.firstname = firstname;
-   	}
-   	
-   	//Lastname
-   	public String getLastname() {
-   		return lastname;
-   	}
-   	public void setLastname(String lastname) {
-   		this.lastname = lastname;
+   	public void setName(String name) {
+   		this.name = name;
    	}
    	
     //Address
@@ -63,4 +53,11 @@ public class Publisher implements Serializable {
     public void setBooks(List<Book> books) {
         this.books = books;
     }
+    
+    //Constructors
+    public Publisher() {}
+    public Publisher(String name) {
+    	this.name=name;	
+    }
+    
 }
