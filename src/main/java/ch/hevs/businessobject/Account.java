@@ -1,3 +1,5 @@
+
+//TODO : delete this entity when don't need anymore 
 package ch.hevs.businessobject;
 
 import jakarta.persistence.Entity;
@@ -6,10 +8,6 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 
-
-// test comment
-// new test comment
-// another test
 @Entity
 public class Account {
 
