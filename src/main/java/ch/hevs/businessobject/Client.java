@@ -1,3 +1,5 @@
+//TODO : delete this entity when don't need anymore 
+
 package ch.hevs.businessobject;
 
 import java.util.List;
