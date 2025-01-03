@@ -1,0 +1,57 @@
+<ui:composition template="/WEB-INF/templates/BasicTemplate.xhtml"
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:define name="title">Add New Book</ui:define>
+
+    <ui:define name="content">
+        <h1 style="text-align: center;">Add a New Book</h1>
+        <div style="width: 50%; margin: auto; padding: 20px;">
+            <h:form>
+                <div style="margin-bottom: 15px;">
+                    <h:outputLabel value="ISBN:" for="isbn" style="display: block; font-weight: bold;" />
+                    <h:inputText id="isbn" value="#{bookBean.newBook.isbn}" style="width: 100%; padding: 8px;" />
+                </div>
+
+                <div style="margin-bottom: 15px;">
+                    <h:outputLabel value="Title:" for="title" style="display: block; font-weight: bold;" />
+                    <h:inputText id="title" value="#{bookBean.newBook.title}" style="width: 100%; padding: 8px;" />
+                </div>
+
+                <div style="margin-bottom: 15px;">
+                    <h:outputLabel value="Author:" for="author" style="display: block; font-weight: bold;" />
+                    <h:inputText id="author" value="#{bookBean.newBook.author}" style="width: 100%; padding: 8px;" />
+                </div>
+
+                <div style="margin-bottom: 15px;">
+                    <h:outputLabel value="Price:" for="price" style="display: block; font-weight: bold;" />
+                    <h:inputText id="price" value="#{bookBean.newBook.price}" style="width: 100%; padding: 8px;" />
+                </div>
+
+                <div style="margin-bottom: 15px;">
+                    <h:outputLabel value="Category:" for="category" style="display: block; font-weight: bold;" />
+                    <h:selectOneMenu id="category" value="#{bookBean.newBook.category}" style="width: 100%; padding: 8px;">
+                        <f:selectItem itemValue="" itemLabel="Select a Category" noSelectionOption="true" />
+                        <f:selectItems value="#{bookBean.availableCategories}" var="category" 
+                                       itemValue="#{category}" itemLabel="#{category.name}" />
+                    </h:selectOneMenu>
+                </div>
+
+                <div style="margin-bottom: 15px;">
+                    <h:outputLabel value="Publisher:" for="publisher" style="display: block; font-weight: bold;" />
+                    <h:selectOneMenu id="publisher" value="#{bookBean.newBook.publisher}" style="width: 100%; padding: 8px;">
+                        <f:selectItem itemValue="" itemLabel="Select a Publisher" noSelectionOption="true" />
+                        <f:selectItems value="#{bookBean.availablePublishers}" var="publisher" 
+                                       itemValue="#{publisher}" itemLabel="#{publisher.name}" />
+                    </h:selectOneMenu>
+                </div>
+
+                <div style="text-align: center; margin-top: 20px;">
+                    <h:commandButton value="Save" action="#{bookBean.saveBook}" style="padding: 10px 20px; font-size: 16px;" />
+                </div>
+            </h:form>
+        </div>
+    </ui:define>
+</ui:composition>

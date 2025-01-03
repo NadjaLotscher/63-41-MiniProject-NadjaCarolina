@@ -7,31 +7,31 @@
 
 <ui:composition template="/WEB-INF/templates/BasicTemplate.xhtml">
     <ui:define name="content">
-        <h:outputLabel value="Welcome to the Online Library!" styleClass="welcome-header" />
-        <br /><br />
-        <div class="navigation-buttons">
-            <!-- Button to view all books -->
-            <h:form>
-                <h:commandButton value="View All Books" action="AllBooks" styleClass="btn btn-primary" />
-            </h:form>
-            <br />
+        <h1 class="welcome-header">Welcome to the Online Library!</h1>
+        <p>Explore our vast collection of books, categories, and more.</p>
+        
+        <div class="library-news" style="margin-top: 20px;">
+            <h2>Library News &amp; Updates</h2>
             
-            <!-- Button to view all wishlists -->
-            <h:form>
-                <h:commandButton value="View All Wishlists" action="wishlists" styleClass="btn btn-secondary" />
-            </h:form>
-            <br />
+            <div class="news-item" style="margin-bottom: 15px; border-bottom: 1px solid #ccc; padding-bottom: 10px;">
+                <h3>📚 New Arrivals: November 2025</h3>
+                <p>We've added over 500 new titles across all categories, including the latest thrillers, science fiction, and educational books. Don't miss the chance to borrow them before they're gone!</p>
+            </div>
             
-            <!-- Button to add a new book -->
-            <h:form rendered="#{userBean.role eq 'Librarian'}">
-                <h:commandButton value="Add a New Book" action="addbook" styleClass="btn btn-success" />
-            </h:form>
-            <br />
+            <div class="news-item" style="margin-bottom: 15px; border-bottom: 1px solid #ccc; padding-bottom: 10px;">
+                <h3>🕒 Extended Hours</h3>
+                <p>Starting next month, the library will remain open until 10 PM on weekdays to better serve our readers.</p>
+            </div>
             
-            <!-- Button to manage categories -->
-            <h:form rendered="#{userBean.role eq 'Librarian'}">
-                <h:commandButton value="Manage Categories" action="categories" styleClass="btn btn-info" />
-            </h:form>
+            <div class="news-item" style="margin-bottom: 15px; border-bottom: 1px solid #ccc; padding-bottom: 10px;">
+                <h3>🎉 Upcoming Event: Author Meetup</h3>
+                <p>Join us on December 15th for a special event featuring local authors. Get your books signed and engage in exciting discussions!</p>
+            </div>
+            
+            <div class="news-item" style="margin-bottom: 15px; border-bottom: 1px solid #ccc; padding-bottom: 10px;">
+                <h3>🔍 Featured Category: Science Fiction</h3>
+                <p>This month, we're highlighting our Science Fiction collection. Discover the worlds created by authors like Isaac Asimov, Philip K. Dick, and more.</p>
+            </div>
         </div>
     </ui:define>
 </ui:composition>

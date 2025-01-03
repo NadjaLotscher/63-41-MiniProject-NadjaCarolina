@@ -3,14 +3,10 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd"
          version="5.0"> 
-  <display-name>TestBanquePC_EPC</display-name>
-  <description></description>
+  <display-name>OnlineLibrary</display-name>
+  <description>Library Management Application</description>
   
   <!-- Context Parameters -->
-  <context-param>
-    <param-name>jakarta.faces.DEFAULT_SUFFIX</param-name>
-    <param-value>.jsp</param-value>
-  </context-param>
   <context-param>
     <param-name>facelets.VIEW_MAPPINGS</param-name>
     <param-value>*.xhtml</param-value>
@@ -18,10 +14,6 @@
   <context-param>
     <param-name>jakarta.faces.STATE_SAVING_METHOD</param-name>
     <param-value>client</param-value>
-  </context-param>
-  <context-param>
-    <param-name>jakarta.servlet.jsp.jstl.fmt.localizationContext</param-name>
-    <param-value>resources.application</param-value>
   </context-param>
   
   <!-- Listener -->
@@ -39,6 +31,10 @@
     <servlet-name>Faces Servlet</servlet-name>
     <url-pattern>/faces/*</url-pattern>
   </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Faces Servlet</servlet-name>
+    <url-pattern>/javax.faces.resource/*</url-pattern>
+  </servlet-mapping>
 
   <!-- Welcome Page -->
   <welcome-file-list>
@@ -51,6 +47,8 @@
     <env-entry-type>java.lang.String</env-entry-type>
     <env-entry-value>am9kZXRlcHV0b2hhY2tlcg==</env-entry-value>
   </env-entry>
+</web-app>
+
 
   <!-- Security Constraints - Temporarily Disabled -->
   <!--
