@@ -20,12 +20,16 @@ public class BookBean implements Serializable {
     private BookService bookService;
 
     @EJB
-    private CategoryService categoryService; // Service to fetch categories
-    
+    private CategoryService categoryService;
+
     @EJB
-    private PublisherService publisherService; // Service to fetch publishers
+    private PublisherService publisherService;
 
     private Book newBook = new Book(); // Book to capture user input
+
+    // Fields for dropdown selection
+    private Long categoryId;
+    private Long publisherId;
 
     // Getter and Setter for newBook
     public Book getNewBook() {
@@ -36,25 +40,57 @@ public class BookBean implements Serializable {
         this.newBook = newBook;
     }
 
+    // Getter and Setter for categoryId
+    public Long getCategoryId() {
+        return categoryId;
+    }
+
+    public void setCategoryId(Long categoryId) {
+        this.categoryId = categoryId;
+    }
+
+    // Getter and Setter for publisherId
+    public Long getPublisherId() {
+        return publisherId;
+    }
+
+    public void setPublisherId(Long publisherId) {
+        this.publisherId = publisherId;
+    }
+
     // Retrieve all books
     public List<Book> getBooks() {
         return bookService.getAllBooks();
     }
-    
+
     // Retrieve all available categories
     public List<Category> getAvailableCategories() {
         return categoryService.getAllCategories();
     }
-    
-    // retrieve all available publishers
+
+    // Retrieve all available publishers
     public List<Publisher> getAvailablePublishers() {
         return publisherService.getAllPublishers();
     }
 
     // Save a new book
     public String saveBook() {
+        // Fetch the selected Category and Publisher using IDs
+        Category selectedCategory = categoryService.findCategoryById(categoryId);
+        Publisher selectedPublisher = publisherService.findPublisherById(publisherId);
+
+        // Set the relationships in newBook
+        newBook.setCategory(selectedCategory);
+        newBook.setPublisher(selectedPublisher);
+
+        // Save the book
         bookService.addBook(newBook);
-        newBook = new Book(); // Reset newBook after saving
+
+        // Reset newBook and dropdown selections
+        newBook = new Book();
+        categoryId = null;
+        publisherId = null;
+
         return "allBooks.xhtml?faces-redirect=true"; // Redirect to the books list
     }
 }
