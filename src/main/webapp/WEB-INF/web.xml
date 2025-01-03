@@ -5,6 +5,8 @@
          version="5.0"> 
   <display-name>TestBanquePC_EPC</display-name>
   <description></description>
+  
+  <!-- Context Parameters -->
   <context-param>
     <param-name>jakarta.faces.DEFAULT_SUFFIX</param-name>
     <param-value>.jsp</param-value>
@@ -21,9 +23,13 @@
     <param-name>jakarta.servlet.jsp.jstl.fmt.localizationContext</param-name>
     <param-value>resources.application</param-value>
   </context-param>
+  
+  <!-- Listener -->
   <listener>
     <listener-class>com.sun.faces.config.ConfigureListener</listener-class>
   </listener>
+
+  <!-- Faces Servlet -->
   <servlet>
     <servlet-name>Faces Servlet</servlet-name>
     <servlet-class>jakarta.faces.webapp.FacesServlet</servlet-class>
@@ -33,13 +39,44 @@
     <servlet-name>Faces Servlet</servlet-name>
     <url-pattern>/faces/*</url-pattern>
   </servlet-mapping>
+
+  <!-- Welcome Page -->
   <welcome-file-list>
-    <welcome-file>welcomeBank.xhtml</welcome-file>
+    <welcome-file>welcome.xhtml</welcome-file>
   </welcome-file-list>
+  
+  <!-- Environment Entry -->
   <env-entry>
     <env-entry-name>jsf/ClientSideSecretKey</env-entry-name>
     <env-entry-type>java.lang.String</env-entry-type>
     <env-entry-value>am9kZXRlcHV0b2hhY2tlcg==</env-entry-value>
   </env-entry>
-  <display-name>TP12-WEB-EJB-PC-EPC-DAO-E</display-name>
+
+  <!-- Security Constraints - Temporarily Disabled -->
+  <!--
+  <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>Secure Content</web-resource-name>
+      <url-pattern>/*</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>librarian</role-name>
+      <role-name>bookworm</role-name>
+    </auth-constraint>
+  </security-constraint>
+
+  <login-config>
+    <auth-method>BASIC</auth-method>
+    <realm-name>Restricted Access!</realm-name>
+  </login-config>
+
+  <security-role>
+    <description>librarian</description>
+    <role-name>librarian</role-name>
+  </security-role>
+  <security-role>
+    <description>bookworm</description>
+    <role-name>bookworm</role-name>
+  </security-role>
+  -->
 </web-app>
