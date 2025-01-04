@@ -12,44 +12,44 @@
             <h:form>
                 <div style="margin-bottom: 15px;">
                     <h:outputLabel value="ISBN:" for="isbn" style="display: block; font-weight: bold;" />
-                    <h:inputText id="isbn" value="#{bookBean.newBook.isbn}" style="width: 100%; padding: 8px;" />
+                    <h:inputText id="isbn" value="#{booksBean.book.isbn}" style="width: 100%; padding: 8px;" />
                 </div>
 
                 <div style="margin-bottom: 15px;">
                     <h:outputLabel value="Title:" for="title" style="display: block; font-weight: bold;" />
-                    <h:inputText id="title" value="#{bookBean.newBook.title}" style="width: 100%; padding: 8px;" />
+                    <h:inputText id="title" value="#{booksBean.book.title}" style="width: 100%; padding: 8px;" />
                 </div>
 
                 <div style="margin-bottom: 15px;">
                     <h:outputLabel value="Author:" for="author" style="display: block; font-weight: bold;" />
-                    <h:inputText id="author" value="#{bookBean.newBook.author}" style="width: 100%; padding: 8px;" />
+                    <h:inputText id="author" value="#{booksBean.book.author}" style="width: 100%; padding: 8px;" />
                 </div>
 
                 <div style="margin-bottom: 15px;">
                     <h:outputLabel value="Price:" for="price" style="display: block; font-weight: bold;" />
-                    <h:inputText id="price" value="#{bookBean.newBook.price}" style="width: 100%; padding: 8px;" />
+                    <h:inputText id="price" value="#{booksBean.book.price}" style="width: 100%; padding: 8px;" />
                 </div>
 
                 <div style="margin-bottom: 15px;">
                     <h:outputLabel value="Category:" for="category" style="display: block; font-weight: bold;" />
-                    <h:selectOneMenu id="category" value="#{bookBean.categoryId}" style="width: 100%; padding: 8px;">
+                    <h:selectOneMenu id="category" value="#{booksBean.categoryId}" style="width: 100%; padding: 8px;">
                         <f:selectItem itemValue="" itemLabel="Select a Category" noSelectionOption="true" />
-                        <f:selectItems value="#{bookBean.availableCategories}" var="category" 
+                        <f:selectItems value="#{booksBean.availableCategories}" var="category" 
                                        itemValue="#{category.id}" itemLabel="#{category.name}" />
                     </h:selectOneMenu>
                 </div>
 
                 <div style="margin-bottom: 15px;">
                     <h:outputLabel value="Publisher:" for="publisher" style="display: block; font-weight: bold;" />
-                    <h:selectOneMenu id="publisher" value="#{bookBean.publisherId}" style="width: 100%; padding: 8px;">
+                    <h:selectOneMenu id="publisher" value="#{booksBean.publisherId}" style="width: 100%; padding: 8px;">
                         <f:selectItem itemValue="" itemLabel="Select a Publisher" noSelectionOption="true" />
-                        <f:selectItems value="#{bookBean.availablePublishers}" var="publisher" 
+                        <f:selectItems value="#{booksBean.availablePublishers}" var="publisher" 
                                        itemValue="#{publisher.id}" itemLabel="#{publisher.name}" />
                     </h:selectOneMenu>
                 </div>
 
                 <div style="text-align: center; margin-top: 20px;">
-                    <h:commandButton value="Save" action="#{bookBean.saveBook}" style="padding: 10px 20px; font-size: 16px;" />
+                    <h:commandButton value="Save" action="#{booksBean.saveBook}" style="padding: 10px 20px; font-size: 16px;" />
                 </div>
             </h:form>
         </div>

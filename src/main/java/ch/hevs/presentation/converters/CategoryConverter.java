@@ -1,7 +1,7 @@
 package ch.hevs.presentation.converters;
 
 import ch.hevs.businessobject.Category;
-import ch.hevs.bankservice.CategoryService;
+import ch.hevs.bankservice.BookService;
 import jakarta.ejb.EJB;
 import jakarta.enterprise.context.RequestScoped;
 import jakarta.faces.component.UIComponent;
@@ -13,7 +13,7 @@ import jakarta.faces.convert.FacesConverter;
 public class CategoryConverter implements jakarta.faces.convert.Converter<Category> {
 
     @EJB
-    private CategoryService categoryService;
+    private BookService bookService;
 
     @Override
     public Category getAsObject(FacesContext context, UIComponent component, String value) {
@@ -22,7 +22,7 @@ public class CategoryConverter implements jakarta.faces.convert.Converter<Catego
         }
         try {
             Long id = Long.valueOf(value);
-            return categoryService.findCategoryById(id);
+            return bookService.findCategoryById(id);
         } catch (NumberFormatException e) {
             throw new IllegalArgumentException("Invalid category ID: " + value, e);
         }
