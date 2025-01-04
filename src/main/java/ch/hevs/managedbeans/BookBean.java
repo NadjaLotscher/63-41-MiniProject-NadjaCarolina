@@ -1,7 +1,9 @@
 package ch.hevs.managedbeans;
 
 import jakarta.enterprise.context.RequestScoped;
+import jakarta.faces.context.FacesContext;
 import jakarta.inject.Named;
+import jakarta.annotation.PostConstruct;
 import jakarta.ejb.EJB;
 import java.io.Serializable;
 import java.util.List;
@@ -25,11 +27,23 @@ public class BookBean implements Serializable {
     @EJB
     private PublisherService publisherService;
 
-    private Book newBook = new Book(); // Book to capture user input
+    private Book newBook = new Book(); // Reused for both creation and details
 
     // Fields for dropdown selection
     private Long categoryId;
     private Long publisherId;
+    
+    // check for isbn (for bookdetails view)
+    @PostConstruct
+    public void init() {
+        String isbn = FacesContext.getCurrentInstance()
+                                  .getExternalContext()
+                                  .getRequestParameterMap()
+                                  .get("isbn");
+        if (isbn != null) {
+            this.newBook = bookService.findBookByIsbn(isbn);
+        }
+    }
 
     // Getter and Setter for newBook
     public Book getNewBook() {
@@ -62,6 +76,12 @@ public class BookBean implements Serializable {
     public List<Book> getBooks() {
         return bookService.getAllBooks();
     }
+
+    // Action method for viewing book details
+    public String viewBookDetails(Book book) {
+        return "bookDetails.xhtml?faces-redirect=true&isbn=" + book.getIsbn();
+    }
+
 
     // Retrieve all available categories
     public List<Category> getAvailableCategories() {

@@ -13,32 +13,25 @@
                 <h1 class="mb-3">All Available Books</h1>
                 <h:button value="Add Book" outcome="/faces/addBook.xhtml" styleClass="add-book-btn" />
             </div>
-            <h:dataTable value="#{bookBean.books}" var="book" border="1" styleClass="book-table">
-                <h:column>
-                    <f:facet name="header">ISBN</f:facet>
-                    #{book.isbn}
-                </h:column>
-                <h:column>
-                    <f:facet name="header">Title</f:facet>
-                    #{book.title}
-                </h:column>
-                <h:column>
-                    <f:facet name="header">Author</f:facet>
-                    #{book.author}
-                </h:column>
-                <h:column>
-                    <f:facet name="header">Price</f:facet>
-                    #{book.price}
-                </h:column>
-                <h:column>
-                    <f:facet name="header">Category</f:facet>
-                    #{book.category.name}
-                </h:column>
-                <h:column>
-                    <f:facet name="header">Publisher</f:facet>
-                    #{book.publisher.name}
-                </h:column>
-            </h:dataTable>
+            
+            <!-- Added the h:form tag -->
+            <h:form>
+                <h:dataTable value="#{bookBean.books}" var="book">
+                    <h:column>
+                        <f:facet name="header">Title</f:facet>
+                        #{book.title}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Author</f:facet>
+                        #{book.author}
+                    </h:column>
+                    <h:column>
+                        <h:commandLink value="View Details" action="#{bookBean.viewBookDetails(book)}">
+                            <f:param name="bookId" value="#{book.isbn}" />
+                        </h:commandLink>
+                    </h:column>
+                </h:dataTable>
+            </h:form>
         </div>
     </ui:define>
 </ui:composition>

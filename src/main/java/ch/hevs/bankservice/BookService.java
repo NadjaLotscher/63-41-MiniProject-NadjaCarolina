@@ -7,5 +7,5 @@ public interface BookService {
     List<Book> getAllBooks();
     void addBook(Book book);
     void deleteBook(Book book);
-    Book findBookById(Long id);
+    Book findBookByIsbn(String id);
 }

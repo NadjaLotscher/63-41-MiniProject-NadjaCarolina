@@ -38,7 +38,7 @@ public class BookServiceBean implements BookService {
     }
 
     @Override
-    public Book findBookById(Long id) {
-        return em.find(Book.class, id);
+    public Book findBookByIsbn(String isbn) {
+        return em.find(Book.class, isbn);
     }
 }
