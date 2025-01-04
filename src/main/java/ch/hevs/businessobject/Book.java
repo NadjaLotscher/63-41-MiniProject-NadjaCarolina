@@ -7,9 +7,12 @@ import java.io.Serializable;
 public class Book implements Serializable {
     private static final long serialVersionUID = 1L;
 	
+    // Primary Key
 	@Id
+	@Column(nullable = false, unique = true)
 	private String isbn; //Id
 	
+	// Fields
     private String title;
     private String author;
     private double price;

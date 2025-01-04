@@ -1,7 +1,7 @@
 package ch.hevs.presentation.converters;
 
 import ch.hevs.businessobject.Publisher;
-import ch.hevs.bankservice.PublisherService;
+import ch.hevs.bankservice.BookService;
 import jakarta.ejb.EJB;
 import jakarta.enterprise.context.RequestScoped;
 import jakarta.faces.component.UIComponent;
@@ -13,7 +13,7 @@ import jakarta.faces.convert.FacesConverter;
 public class PublisherConverter implements jakarta.faces.convert.Converter<Publisher> {
 
     @EJB
-    private PublisherService publisherService;
+    private BookService bookService;
 
     @Override
     public Publisher getAsObject(FacesContext context, UIComponent component, String value) {
@@ -22,7 +22,7 @@ public class PublisherConverter implements jakarta.faces.convert.Converter<Publi
         }
         try {
             Long id = Long.valueOf(value);
-            return publisherService.findPublisherById(id);
+            return bookService.findPublisherById(id);
         } catch (NumberFormatException e) {
             throw new IllegalArgumentException("Invalid publisher ID: " + value, e);
         }

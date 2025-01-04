@@ -2,10 +2,6 @@ C:\rootJakartaEE2\Labs\63-41-MiniProjectNC\src\main\java\ch\hevs\bankservice\Ban
 C:\rootJakartaEE2\Labs\63-41-MiniProjectNC\src\main\java\ch\hevs\bankservice\BankBean.java
 C:\rootJakartaEE2\Labs\63-41-MiniProjectNC\src\main\java\ch\hevs\bankservice\BookService.java
 C:\rootJakartaEE2\Labs\63-41-MiniProjectNC\src\main\java\ch\hevs\bankservice\BookServiceBean.java
-C:\rootJakartaEE2\Labs\63-41-MiniProjectNC\src\main\java\ch\hevs\bankservice\CategoryService.java
-C:\rootJakartaEE2\Labs\63-41-MiniProjectNC\src\main\java\ch\hevs\bankservice\CategoryServiceBean.java
-C:\rootJakartaEE2\Labs\63-41-MiniProjectNC\src\main\java\ch\hevs\bankservice\PublisherService.java
-C:\rootJakartaEE2\Labs\63-41-MiniProjectNC\src\main\java\ch\hevs\bankservice\PublisherServiceBean.java
 C:\rootJakartaEE2\Labs\63-41-MiniProjectNC\src\main\java\ch\hevs\businessobject\Account.java
 C:\rootJakartaEE2\Labs\63-41-MiniProjectNC\src\main\java\ch\hevs\businessobject\Address.java
 C:\rootJakartaEE2\Labs\63-41-MiniProjectNC\src\main\java\ch\hevs\businessobject\Book.java
@@ -15,7 +11,7 @@ C:\rootJakartaEE2\Labs\63-41-MiniProjectNC\src\main\java\ch\hevs\businessobject\
 C:\rootJakartaEE2\Labs\63-41-MiniProjectNC\src\main\java\ch\hevs\businessobject\Publisher.java
 C:\rootJakartaEE2\Labs\63-41-MiniProjectNC\src\main\java\ch\hevs\businessobject\User.java
 C:\rootJakartaEE2\Labs\63-41-MiniProjectNC\src\main\java\ch\hevs\exception\BankException.java
-C:\rootJakartaEE2\Labs\63-41-MiniProjectNC\src\main\java\ch\hevs\managedbeans\BookBean.java
+C:\rootJakartaEE2\Labs\63-41-MiniProjectNC\src\main\java\ch\hevs\managedbeans\BooksBean.java
 C:\rootJakartaEE2\Labs\63-41-MiniProjectNC\src\main\java\ch\hevs\managedbeans\TransferBean.java
 C:\rootJakartaEE2\Labs\63-41-MiniProjectNC\src\main\java\ch\hevs\presentation\converters\CategoryConverter.java
 C:\rootJakartaEE2\Labs\63-41-MiniProjectNC\src\main\java\ch\hevs\presentation\converters\PublisherConverter.java
