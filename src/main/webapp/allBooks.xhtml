@@ -7,11 +7,15 @@
       xmlns:f="http://java.sun.com/jsf/core">
 
 <ui:composition template="/WEB-INF/templates/BasicTemplate.xhtml">
+	<f:metadata>
+        <f:event type="preRenderView" listener="#{booksBean.refreshBooks}" />
+    </f:metadata>
+    
     <ui:define name="content">
         <div class="container mt-3">
             <div class="header">
                 <h1 class="mb-3">All Available Books</h1>
-                <h:button value="Add Book" outcome="/faces/addBook.xhtml" styleClass="add-book-btn" />
+                <h:commandButton value="Add Book" action="#{booksBean.prepareAddBookView}" styleClass="add-book-btn" />
             </div>
             
             <h:form>

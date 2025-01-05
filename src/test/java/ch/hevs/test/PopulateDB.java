@@ -43,17 +43,17 @@ public class PopulateDB extends TestCase {
             em.persist(harperCollins);
             em.persist(simonSchuster);
 
-            // Books
-            Book book1 = new Book("The Hunger Games", "Suzanne Collins", "9781407132082", 11.47, scholastic, fiction);
-            Book book2 = new Book("Harry Potter and the Philosopher's Stone", "J.K. Rowling", "9780747532743", 12.99, scholastic, fantasy);
-            Book book3 = new Book("The Lord of the Rings", "J.R.R. Tolkien", "9780261102385", 15.99, harperCollins, fantasy);
-            Book book4 = new Book("A Brief History of Time", "Stephen Hawking", "9780553380163", 10.99, penguin, science);
-            Book book5 = new Book("Dune", "Frank Herbert", "9780441013593", 9.99, penguin, science);
-            Book book6 = new Book("The Girl with the Dragon Tattoo", "Stieg Larsson", "9780307949486", 9.99, penguin, thriller);
-            Book book7 = new Book("Gone Girl", "Gillian Flynn", "9780307588371", 10.99, simonSchuster, thriller);
-            Book book8 = new Book("The Da Vinci Code", "Dan Brown", "9780307474278", 8.99, penguin, thriller);
-            Book book9 = new Book("The Silence of the Lambs", "Thomas Harris", "9780312924584", 7.99, simonSchuster, thriller);
-            Book book10 = new Book("Shutter Island", "Dennis Lehane", "9780061898815", 8.99, harperCollins, thriller);
+            // Books with the 'available' field
+            Book book1 = new Book("The Hunger Games", "Suzanne Collins", "9781407132082", scholastic, fiction, true);
+            Book book2 = new Book("Harry Potter and the Philosopher's Stone", "J.K. Rowling", "9780747532743", scholastic, fantasy, true);
+            Book book3 = new Book("The Lord of the Rings", "J.R.R. Tolkien", "9780261102385", harperCollins, fantasy, false);
+            Book book4 = new Book("A Brief History of Time", "Stephen Hawking", "9780553380163", penguin, science, true);
+            Book book5 = new Book("Dune", "Frank Herbert", "9780441013593", penguin, science, true);
+            Book book6 = new Book("The Girl with the Dragon Tattoo", "Stieg Larsson", "9780307949486", penguin, thriller, true);
+            Book book7 = new Book("Gone Girl", "Gillian Flynn", "9780307588371", simonSchuster, thriller, true);
+            Book book8 = new Book("The Da Vinci Code", "Dan Brown", "9780307474278", penguin, thriller, true);
+            Book book9 = new Book("The Silence of the Lambs", "Thomas Harris", "9780312924584", simonSchuster, thriller, true);
+            Book book10 = new Book("Shutter Island", "Dennis Lehane", "9780061898815", harperCollins, thriller, false);
 
             em.persist(book1);
             em.persist(book2);
@@ -78,6 +78,9 @@ public class PopulateDB extends TestCase {
             tx.commit();
 
         } catch (Exception e) {
+            if (tx != null && tx.isActive()) {
+                tx.rollback();
+            }
             e.printStackTrace();
         }
     }
