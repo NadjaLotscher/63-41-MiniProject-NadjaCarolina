@@ -22,7 +22,7 @@ public class User implements Serializable {
     private Address address;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    private List<Collection> collections;
+    private List<BorrowList> collections;
 
     // Getters and Setters
     
@@ -75,10 +75,10 @@ public class User implements Serializable {
     }
 
     //Collection
-    public List<Collection> getCollections() {
+    public List<BorrowList> getCollections() {
         return collections;
     }
-    public void setCollections(List<Collection> collections) {
+    public void setCollections(List<BorrowList> collections) {
         this.collections = collections;
     }
     

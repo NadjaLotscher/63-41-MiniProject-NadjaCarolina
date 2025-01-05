@@ -15,7 +15,6 @@ public class Book implements Serializable {
 	// Fields
     private String title;
     private String author;
-    private double price;
 	
     //relations
     @ManyToOne
@@ -24,6 +23,8 @@ public class Book implements Serializable {
     @ManyToOne
     private Publisher publisher;
 	
+    @Column(nullable = false)
+    private boolean available;
     
     // Getters and Setters
     
@@ -51,14 +52,6 @@ public class Book implements Serializable {
 		this.author=author;
 	}
 		
-	//Price
-	public double getPrice() {
-	    return price;
-	   }
-	public void setPrice(double price) {
-	    this.price = price;
-	   }
-		
 	//Category
 	public Category getCategory() {
 	    return category;
@@ -74,16 +67,26 @@ public class Book implements Serializable {
 	 public void setPublisher(Publisher publisher) {
 	     this.publisher = publisher;
 	   }
+	 
+	 // available
+	 public boolean isAvailable() {
+			return available;
+		}
+	 public void setAvailable(boolean available) {
+			this.available = available;
+		}
 	
 	//Constructors
 	 public Book() {}
-	 public Book(String title, String author, String isbn, double price, Publisher publisher, Category category) {
-	      this.title = title;
-	      this.author = author;
-	      this.isbn = isbn;
-	      this.price = price;
-	      this.publisher = publisher;
-	      this.category = category;
-	   }
+	 public Book(String title, String author, String isbn, Publisher publisher, Category category, boolean available) {
+		    this.title = title;
+		    this.author = author;
+		    this.isbn = isbn;
+		    this.publisher = publisher;
+		    this.category = category;
+		    this.available = available;
+		}
+
+	
 	
 }

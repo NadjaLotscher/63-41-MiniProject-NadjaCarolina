@@ -35,6 +35,14 @@
                     <!-- Back to All Books Button -->
                     <h:commandButton value="Back to All Books" action="/faces/allBooks.xhtml?faces-redirect=true" styleClass="btn btn-primary" />
                     
+                    <!-- Add to Borrow List Button -->
+                    <h:panelGroup>
+                        <h:commandButton value="Add to Borrow List" action="#{borrowBean.addToBorrowList}" 
+                                         styleClass="btn btn-success"
+                                         rendered="#{booksBean.book.available}" />
+                        <h:outputText value="Not Available" styleClass="text-danger" rendered="#{!booksBean.book.available}" />
+                    </h:panelGroup>
+                    
                     <!-- Delete Book Button -->
                     <h:commandButton value="Delete Book" action="#{booksBean.deleteBook}" 
                                      styleClass="btn btn-danger"

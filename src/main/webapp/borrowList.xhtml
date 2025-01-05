@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition template="/WEB-INF/templates/BasicTemplate.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core">
+
+    <!-- Set the page title -->
+    <ui:define name="title">Borrow List</ui:define>
+
+    <!-- Insert content -->
+    <ui:define name="content">
+        <h1>Borrow List</h1>
+
+        <h:form>
+            <!-- Show a message if the list is empty -->
+            <h:panelGroup rendered="#{empty borrowBean.borrowList}">
+                <h:outputText value="Your borrow list is currently empty." />
+            </h:panelGroup>
+
+            <!-- Display the borrow list -->
+            <h:dataTable value="#{borrowBean.borrowList}" var="book" border="1">
+                <h:column>
+                    <f:facet name="header">Title</f:facet>
+                    #{book.title}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Author</f:facet>
+                    #{book.author}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Available</f:facet>
+                    #{book.available ? 'Yes' : 'No'}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Actions</f:facet>
+                    <h:commandButton value="Remove" action="#{borrowBean.removeFromBorrowList(book.isbn)}" />
+                </h:column>
+            </h:dataTable>
+
+            <!-- Button to confirm borrowing -->
+            <h:commandButton value="Confirm Borrowing" action="#{borrowBean.confirmBorrowing}" />
+        </h:form>
+    </ui:define>
+
+</ui:composition>

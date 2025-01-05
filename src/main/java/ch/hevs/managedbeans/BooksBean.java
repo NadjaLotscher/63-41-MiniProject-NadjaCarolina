@@ -1,7 +1,6 @@
 package ch.hevs.managedbeans;
 
 import jakarta.enterprise.context.SessionScoped;
-import jakarta.faces.context.FacesContext;
 import jakarta.inject.Named;
 import jakarta.annotation.PostConstruct;
 import jakarta.ejb.EJB;
@@ -38,7 +37,7 @@ public class BooksBean implements Serializable {
 			// use JNDI to inject reference to bank EJB
 			InitialContext ctx = new InitialContext();
 			bookService = (BookService) ctx.lookup("java:global/63-41-MINIPROJECT-BOOK-0.0.1-SNAPSHOT/BooksBean!ch.hevs.bankservice.BookService");
-			
+			cachedBooks = bookService.getAllBooks();
 		} catch (NamingException e) {
 			e.printStackTrace();
 		}
@@ -157,5 +156,11 @@ public class BooksBean implements Serializable {
 
         return "allBooks.xhtml?faces-redirect=true"; // Redirect to book list
     }
+    
+    public String prepareAddBookView() {
+        this.book = new Book(); // Reset to a new, empty Book instance
+        return "/faces/addBook.xhtml"; // Navigate to the addBook.xhtml view
+    }
+
 
 }
