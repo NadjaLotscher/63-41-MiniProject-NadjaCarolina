@@ -1,20 +1,20 @@
-C:\rootJakartaEE2\Labs\63-41-MiniProjectNC\src\main\java\ch\hevs\bankservice\Bank.java
-C:\rootJakartaEE2\Labs\63-41-MiniProjectNC\src\main\java\ch\hevs\bankservice\BankBean.java
-C:\rootJakartaEE2\Labs\63-41-MiniProjectNC\src\main\java\ch\hevs\bankservice\BookService.java
-C:\rootJakartaEE2\Labs\63-41-MiniProjectNC\src\main\java\ch\hevs\bankservice\BookServiceBean.java
-C:\rootJakartaEE2\Labs\63-41-MiniProjectNC\src\main\java\ch\hevs\bankservice\BorrowSession.java
-C:\rootJakartaEE2\Labs\63-41-MiniProjectNC\src\main\java\ch\hevs\bankservice\BorrowSessionBean.java
-C:\rootJakartaEE2\Labs\63-41-MiniProjectNC\src\main\java\ch\hevs\businessobject\Account.java
-C:\rootJakartaEE2\Labs\63-41-MiniProjectNC\src\main\java\ch\hevs\businessobject\Address.java
-C:\rootJakartaEE2\Labs\63-41-MiniProjectNC\src\main\java\ch\hevs\businessobject\Book.java
-C:\rootJakartaEE2\Labs\63-41-MiniProjectNC\src\main\java\ch\hevs\businessobject\BorrowList.java
-C:\rootJakartaEE2\Labs\63-41-MiniProjectNC\src\main\java\ch\hevs\businessobject\Category.java
-C:\rootJakartaEE2\Labs\63-41-MiniProjectNC\src\main\java\ch\hevs\businessobject\Client.java
-C:\rootJakartaEE2\Labs\63-41-MiniProjectNC\src\main\java\ch\hevs\businessobject\Publisher.java
-C:\rootJakartaEE2\Labs\63-41-MiniProjectNC\src\main\java\ch\hevs\businessobject\User.java
-C:\rootJakartaEE2\Labs\63-41-MiniProjectNC\src\main\java\ch\hevs\exception\BankException.java
-C:\rootJakartaEE2\Labs\63-41-MiniProjectNC\src\main\java\ch\hevs\managedbeans\BooksBean.java
-C:\rootJakartaEE2\Labs\63-41-MiniProjectNC\src\main\java\ch\hevs\managedbeans\BorrowBean.java
-C:\rootJakartaEE2\Labs\63-41-MiniProjectNC\src\main\java\ch\hevs\managedbeans\TransferBean.java
-C:\rootJakartaEE2\Labs\63-41-MiniProjectNC\src\main\java\ch\hevs\presentation\converters\CategoryConverter.java
-C:\rootJakartaEE2\Labs\63-41-MiniProjectNC\src\main\java\ch\hevs\presentation\converters\PublisherConverter.java
+C:\Users\StartPc\Desktop\HES\63-41 Implementing services\rootJakartaEE\Labs\TP12-WEB-EJB-PC-EPC-E-solution-Stateless-Merge\src\main\java\ch\hevs\bankservice\Bank.java
+C:\Users\StartPc\Desktop\HES\63-41 Implementing services\rootJakartaEE\Labs\TP12-WEB-EJB-PC-EPC-E-solution-Stateless-Merge\src\main\java\ch\hevs\bankservice\BankBean.java
+C:\Users\StartPc\Desktop\HES\63-41 Implementing services\rootJakartaEE\Labs\TP12-WEB-EJB-PC-EPC-E-solution-Stateless-Merge\src\main\java\ch\hevs\bankservice\BookService.java
+C:\Users\StartPc\Desktop\HES\63-41 Implementing services\rootJakartaEE\Labs\TP12-WEB-EJB-PC-EPC-E-solution-Stateless-Merge\src\main\java\ch\hevs\bankservice\BookServiceBean.java
+C:\Users\StartPc\Desktop\HES\63-41 Implementing services\rootJakartaEE\Labs\TP12-WEB-EJB-PC-EPC-E-solution-Stateless-Merge\src\main\java\ch\hevs\bankservice\BorrowSession.java
+C:\Users\StartPc\Desktop\HES\63-41 Implementing services\rootJakartaEE\Labs\TP12-WEB-EJB-PC-EPC-E-solution-Stateless-Merge\src\main\java\ch\hevs\bankservice\BorrowSessionBean.java
+C:\Users\StartPc\Desktop\HES\63-41 Implementing services\rootJakartaEE\Labs\TP12-WEB-EJB-PC-EPC-E-solution-Stateless-Merge\src\main\java\ch\hevs\businessobject\Account.java
+C:\Users\StartPc\Desktop\HES\63-41 Implementing services\rootJakartaEE\Labs\TP12-WEB-EJB-PC-EPC-E-solution-Stateless-Merge\src\main\java\ch\hevs\businessobject\Address.java
+C:\Users\StartPc\Desktop\HES\63-41 Implementing services\rootJakartaEE\Labs\TP12-WEB-EJB-PC-EPC-E-solution-Stateless-Merge\src\main\java\ch\hevs\businessobject\Book.java
+C:\Users\StartPc\Desktop\HES\63-41 Implementing services\rootJakartaEE\Labs\TP12-WEB-EJB-PC-EPC-E-solution-Stateless-Merge\src\main\java\ch\hevs\businessobject\BorrowList.java
+C:\Users\StartPc\Desktop\HES\63-41 Implementing services\rootJakartaEE\Labs\TP12-WEB-EJB-PC-EPC-E-solution-Stateless-Merge\src\main\java\ch\hevs\businessobject\Category.java
+C:\Users\StartPc\Desktop\HES\63-41 Implementing services\rootJakartaEE\Labs\TP12-WEB-EJB-PC-EPC-E-solution-Stateless-Merge\src\main\java\ch\hevs\businessobject\Client.java
+C:\Users\StartPc\Desktop\HES\63-41 Implementing services\rootJakartaEE\Labs\TP12-WEB-EJB-PC-EPC-E-solution-Stateless-Merge\src\main\java\ch\hevs\businessobject\Publisher.java
+C:\Users\StartPc\Desktop\HES\63-41 Implementing services\rootJakartaEE\Labs\TP12-WEB-EJB-PC-EPC-E-solution-Stateless-Merge\src\main\java\ch\hevs\businessobject\User.java
+C:\Users\StartPc\Desktop\HES\63-41 Implementing services\rootJakartaEE\Labs\TP12-WEB-EJB-PC-EPC-E-solution-Stateless-Merge\src\main\java\ch\hevs\exception\BankException.java
+C:\Users\StartPc\Desktop\HES\63-41 Implementing services\rootJakartaEE\Labs\TP12-WEB-EJB-PC-EPC-E-solution-Stateless-Merge\src\main\java\ch\hevs\managedbeans\BooksBean.java
+C:\Users\StartPc\Desktop\HES\63-41 Implementing services\rootJakartaEE\Labs\TP12-WEB-EJB-PC-EPC-E-solution-Stateless-Merge\src\main\java\ch\hevs\managedbeans\BorrowBean.java
+C:\Users\StartPc\Desktop\HES\63-41 Implementing services\rootJakartaEE\Labs\TP12-WEB-EJB-PC-EPC-E-solution-Stateless-Merge\src\main\java\ch\hevs\managedbeans\TransferBean.java
+C:\Users\StartPc\Desktop\HES\63-41 Implementing services\rootJakartaEE\Labs\TP12-WEB-EJB-PC-EPC-E-solution-Stateless-Merge\src\main\java\ch\hevs\presentation\converters\CategoryConverter.java
+C:\Users\StartPc\Desktop\HES\63-41 Implementing services\rootJakartaEE\Labs\TP12-WEB-EJB-PC-EPC-E-solution-Stateless-Merge\src\main\java\ch\hevs\presentation\converters\PublisherConverter.java

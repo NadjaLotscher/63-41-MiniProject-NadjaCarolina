@@ -1,8 +1,10 @@
 ch\hevs\exception\BankException.class
+ch\hevs\managedbeans\BorrowBean.class
 ch\hevs\bankservice\BorrowSession.class
 ch\hevs\businessobject\Book.class
 ch\hevs\presentation\converters\CategoryConverter.class
 ch\hevs\businessobject\Account.class
+ch\hevs\managedbeans\BooksBean.class
 ch\hevs\businessobject\Publisher.class
 ch\hevs\businessobject\User.class
 ch\hevs\bankservice\Bank.class

@@ -158,8 +158,10 @@ public class BooksBean implements Serializable {
     }
     
     public String prepareAddBookView() {
+
+        System.out.println("Navigating to addBook.xhtml");
         this.book = new Book(); // Reset to a new, empty Book instance
-        return "/faces/addBook.xhtml"; // Navigate to the addBook.xhtml view
+        return "addBook.xhtml?faces-redirect=true"; // Navigate to the addBook.xhtml view
     }
 
 

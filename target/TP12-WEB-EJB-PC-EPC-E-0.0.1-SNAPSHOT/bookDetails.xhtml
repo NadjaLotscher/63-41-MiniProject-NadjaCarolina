@@ -46,6 +46,7 @@
                     <!-- Delete Book Button -->
                     <h:commandButton value="Delete Book" action="#{booksBean.deleteBook}" 
                                      styleClass="btn btn-danger"
+                                     rendered="#{facesContext.externalContext.isUserInRole('librarian')}" 
                                      onclick="return confirm('Are you sure you want to delete this book?');" />
                 </div>
             </h:form>

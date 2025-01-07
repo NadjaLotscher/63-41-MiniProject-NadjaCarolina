@@ -15,7 +15,7 @@
         <div class="container mt-3">
             <div class="header">
                 <h1 class="mb-3">All Available Books</h1>
-                <h:commandButton value="Add Book" action="#{booksBean.prepareAddBookView}" styleClass="add-book-btn" />
+                <h:form><h:commandButton value="Add Book" action="#{booksBean.prepareAddBookView}" styleClass="add-book-btn" rendered="#{facesContext.externalContext.isUserInRole('librarian')}"/></h:form>
             </div>
             
             <h:form>
