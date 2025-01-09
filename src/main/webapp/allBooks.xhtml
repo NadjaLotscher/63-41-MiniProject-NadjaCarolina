@@ -18,6 +18,15 @@
                 <h:form><h:commandButton value="Add Book" action="#{booksBean.prepareAddBookView}" styleClass="add-book-btn" rendered="#{facesContext.externalContext.isUserInRole('librarian')}"/></h:form>
             </div>
             
+            <!-- Search Form -->
+		    <h:form>
+		        <div class="search-bar">
+		            <h:inputText value="#{booksBean.searchTerm}" placeholder="Search by ISBN, Title, Author, or Category" />
+		            <h:commandButton value="Search" action="#{booksBean.searchBooks}" />
+		        </div>
+		    </h:form>
+		
+		    <!-- Books Table -->
             <h:form>
                 <h:dataTable value="#{booksBean.books}" var="book" border="1" styleClass="table table-striped">
                     <!-- Book Title Column -->

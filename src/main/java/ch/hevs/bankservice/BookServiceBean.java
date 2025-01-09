@@ -109,4 +109,17 @@ public class BookServiceBean implements BookService {
             em.remove(publisher);
         }
     }
+
+    @Override
+    @PermitAll
+    public List<Book> searchBooks(String searchTerm) {
+        String query = "SELECT b FROM Book b WHERE LOWER(b.title) LIKE :searchTerm " +
+                       "OR LOWER(b.author) LIKE :searchTerm " +
+                       "OR LOWER(b.category.name) LIKE :searchTerm " +
+                       "OR b.isbn LIKE :searchTerm";
+        return em.createQuery(query, Book.class)
+                 .setParameter("searchTerm", "%" + searchTerm.toLowerCase() + "%")
+                 .getResultList();
+    }
+
 }

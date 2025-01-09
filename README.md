@@ -70,7 +70,7 @@ Ensure that the users are correctly registered:
         wildfly:deploy
 
 ## 7. Access the Project
-Navigate to the following URL in your browser: http://localhost:8080/TP12-WEB-EJB-PC-EPC-E-0.0.1-SNAPSHOT/faces/welcomeBank.xhtml
+Navigate to the following URL in your browser: http://localhost:8080/TP12-WEB-EJB-PC-EPC-E-0.0.1-SNAPSHOT/faces/welcomeLibrary.xhtml 
 
 ### Login
 - Use one of the previously created user accounts to log in.

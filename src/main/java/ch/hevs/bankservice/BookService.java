@@ -11,6 +11,8 @@ public interface BookService {
     Book findBookByIsbn(String id);
     void addBook(Book book);
     void deleteBookByIsbn(String isbn);
+    List<Book> searchBooks(String searchTerm);
+
 
     // Category Management
     List<Category> getAllCategories();
