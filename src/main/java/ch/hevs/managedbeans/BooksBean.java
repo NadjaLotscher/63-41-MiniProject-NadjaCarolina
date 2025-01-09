@@ -31,6 +31,9 @@ public class BooksBean implements Serializable {
     private Long categoryId;
     private Long publisherId;
     
+    private String searchTerm;
+    private List<Book> searchResults;
+    
     @PostConstruct
     public void init() {
 		try {
@@ -68,6 +71,23 @@ public class BooksBean implements Serializable {
 
     public void setPublisherId(Long publisherId) {
         this.publisherId = publisherId;
+    }
+    
+ // Getter and Setter for searchTerm
+    public String getSearchTerm() {
+        return searchTerm;
+    }
+
+    public void setSearchTerm(String searchTerm) {
+        this.searchTerm = searchTerm;
+    }
+
+    public List<Book> getSearchResults() {
+        return searchResults;
+    }
+
+    public void setSearchResults(List<Book> searchResults) {
+        this.searchResults = searchResults;
     }
     
     public List<Book> getBooks() {
@@ -158,9 +178,20 @@ public class BooksBean implements Serializable {
     }
     
     public String prepareAddBookView() {
+
+        System.out.println("Navigating to addBook.xhtml");
         this.book = new Book(); // Reset to a new, empty Book instance
-        return "/faces/addBook.xhtml"; // Navigate to the addBook.xhtml view
+        return "addBook.xhtml?faces-redirect=true"; // Navigate to the addBook.xhtml view
     }
 
+    public String searchBooks() {
+        if (searchTerm == null || searchTerm.trim().isEmpty()) {
+            searchResults = null;
+            return "allBooks.xhtml?faces-redirect=true";
+        }
+
+        searchResults = bookService.searchBooks(searchTerm.trim());
+        return "showSearchResult.xhtml?faces-redirect=true";
+    }
 
 }

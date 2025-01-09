@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core">
+
+<ui:composition template="/WEB-INF/templates/BasicTemplate.xhtml">
+    <ui:define name="content">
+        <div class="container mt-3">
+            <div class="header">
+                <h1 class="mb-3">Search Results</h1>
+                <h:form>
+                    <h:commandButton value="Back to All Books" action="allBooks.xhtml?faces-redirect=true" />
+                </h:form>
+            </div>
+
+            <h:form>
+                <h:dataTable value="#{booksBean.searchResults}" var="book" border="1" styleClass="table table-striped">
+                    <h:column>
+                        <f:facet name="header">Title</f:facet>
+                        #{book.title}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Author</f:facet>
+                        #{book.author}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Actions</f:facet>
+                        <h:commandLink value="View Details" action="#{booksBean.viewBookDetails(book)}" />
+                    </h:column>
+                </h:dataTable>
+            </h:form>
+        </div>
+    </ui:define>
+</ui:composition>
+</html>

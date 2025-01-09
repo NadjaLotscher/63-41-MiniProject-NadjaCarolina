@@ -47,34 +47,31 @@
     <env-entry-type>java.lang.String</env-entry-type>
     <env-entry-value>am9kZXRlcHV0b2hhY2tlcg==</env-entry-value>
   </env-entry>
-</web-app>
 
 
-  <!-- Security Constraints - Temporarily Disabled -->
-  <!--
+  <!-- Security Constraints-->
   <security-constraint>
     <web-resource-collection>
-      <web-resource-name>Secure Content</web-resource-name>
-      <url-pattern>/*</url-pattern>
+      <web-resource-name>General Access</web-resource-name>
+      <url-pattern>/faces/*</url-pattern>
     </web-resource-collection>
     <auth-constraint>
+      <role-name>reader</role-name>
       <role-name>librarian</role-name>
-      <role-name>bookworm</role-name>
     </auth-constraint>
   </security-constraint>
 
+  <!-- Login Configuration -->
   <login-config>
     <auth-method>BASIC</auth-method>
-    <realm-name>Restricted Access!</realm-name>
+    <realm-name>ApplicationRealm</realm-name>
   </login-config>
 
+  <!-- Security Roles -->
   <security-role>
-    <description>librarian</description>
+    <role-name>reader</role-name>
+  </security-role>
+  <security-role>
     <role-name>librarian</role-name>
   </security-role>
-  <security-role>
-    <description>bookworm</description>
-    <role-name>bookworm</role-name>
-  </security-role>
-  -->
 </web-app>
